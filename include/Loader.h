@@ -6,7 +6,6 @@
 class Loader {
   public:
 	  Loader();
-	  Loader(int vao_id, int vertex_count);
 	  ~Loader();
     RawModel* loadToVAO(float *positions);
    
