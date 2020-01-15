@@ -1,2 +1,3 @@
-Simple Rectangle
-# 01-Simple-Rectangle
+Simple OpenGL project. Draws a rectangle.
+
+== work in progress ==
