@@ -15,6 +15,6 @@ int main() {
   }
 
   window_manager->closeDisplay();
-
+  delete window_manager;
 	return 0;
 }
