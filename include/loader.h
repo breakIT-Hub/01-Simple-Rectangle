@@ -1,8 +1,10 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-#include "raw_model.h"
 #include <vector>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include "raw_model.h"
 
 class Loader {
 public:
@@ -11,7 +13,7 @@ public:
   RawModel *LoadToVao(std::vector<float> &positions);
 
 private:
-  int CreateVao();
+  GLuint CreateVao();
   void StoreDataInAttributeList(int attribute_number, std::vector<float> &data);
   void UnbindVao();
 };

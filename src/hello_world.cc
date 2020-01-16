@@ -1,20 +1,20 @@
-#include <cstdio>
+#include "../include/hello_world.h"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "../include/WindowManager.h"
-#include "unistd.h" //testcase only
+#include "../include/window_manager.h"
 
 int main() {
 
-  WindowManager* window_manager = new WindowManager(640, 480, 120, "First Window");
-  window_manager->createDisplay(); 
+  WindowManager *window_manager =
+      new WindowManager(640, 480, 120, "First Window");
+  window_manager->createDisplay();
   
-  while(true) {
+  while (!glfwWindowShouldClose(window)) {
     window_manager->updateDisplay();
-    usleep(500);
   }
 
   window_manager->closeDisplay();
   delete window_manager;
-	return 0;
+  return 0;
 }

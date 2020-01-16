@@ -1,4 +1,5 @@
-#include "../include/WindowManager.h"
+#include "../include/window_manager.h"
+
 #include <cstdio>
 #include <string>
 #include <iostream>
@@ -29,7 +30,7 @@ WindowManager::~WindowManager() {
 	printf("Terminating process");
 }
 
-void WindowManager::createDisplay() {
+void WindowManager::CreateDisplay() {
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -40,7 +41,7 @@ void WindowManager::createDisplay() {
 
 	if (window_ == NULL) {
 		printf("Something went wrong");
-    closeDisplay();
+    CloseDisplay();
 		exit(EXIT_FAILURE);
 	}
 
@@ -48,20 +49,24 @@ void WindowManager::createDisplay() {
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		printf("Failed to initialize GLAD");
-    closeDisplay();
+    CloseDisplay();
 		exit(EXIT_FAILURE);
 	}
 
 	glViewport(0, 0, 800, 600);
 }
 
-void WindowManager::updateDisplay() {
+void WindowManager::UpdateDisplay() {
   glfwSwapBuffers(window_);
 
 }
 
-void WindowManager::closeDisplay() {
+void WindowManager::CloseDisplay() {
 	glfwDestroyWindow(window_);
   glfwTerminate();
   window_ = nullptr;
+}
+
+GLFWwindow* WindowManager::Window() {
+  return window_;
 }
