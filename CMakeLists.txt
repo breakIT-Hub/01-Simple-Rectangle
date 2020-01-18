@@ -10,7 +10,7 @@ set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/libs")
 set(INC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 include_directories(${SRC_DIR} ${INC_DIR})
-file(GLOB SRC_FILES "${SRC_DIR}/*.cpp" "${INC_DIR}/*.h")
+file(GLOB SRC_FILES "${SRC_DIR}/*.cc" "${INC_DIR}/*.h")
 
 # executable definition and properties
 add_executable(${PROJECT_NAME} ${SRC_FILES})
