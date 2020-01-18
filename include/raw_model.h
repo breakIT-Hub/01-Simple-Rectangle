@@ -1,17 +1,20 @@
 #ifndef RAWMODEL_H
 #define RAWMODEL_H
 
-class RawModel {
-  public:
-	  RawModel();
-	  RawModel(int vao_id, int vertex_count);
-	  ~RawModel();
-	  int getVaoID();
-	  int getVertexCount();
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
-  private:
-	  int vao_id_;
-	  int vertex_count_;
+class RawModel {
+public:
+  RawModel();
+  RawModel(GLuint vao_id, int vertex_count);
+  ~RawModel();
+  GLuint GetVaoId();
+  GLuint GetVertexCount();
+
+private:
+  GLuint vao_id_;
+  GLuint vertex_count_;
 };
 
 #endif // RAWMODEL_H
