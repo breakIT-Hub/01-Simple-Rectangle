@@ -1,4 +1,4 @@
-#include "../include/RawModel.h"
+#include "../include/raw_model.h"
 
 RawModel::RawModel() {
   this->vao_id_ = 0;

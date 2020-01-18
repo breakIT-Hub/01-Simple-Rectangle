@@ -8,13 +8,11 @@ int main() {
 
   WindowManager *window_manager =
       new WindowManager(640, 480, 120, "First Window");
-  window_manager->createDisplay();
-  
-  while (!glfwWindowShouldClose(window)) {
-    window_manager->updateDisplay();
-  }
+  window_manager->CreateDisplay();
 
-  window_manager->closeDisplay();
+  window_manager->UpdateDisplay();
+
+  window_manager->CloseDisplay();
   delete window_manager;
   return 0;
 }

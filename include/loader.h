@@ -11,8 +11,11 @@ public:
   Loader();
   ~Loader();
   RawModel *LoadToVao(std::vector<float> &positions);
-
+  void CleanUp();
+    
 private:
+  std::vector<GLuint> vaos;
+  std::vector<GLuint> vbos;
   GLuint CreateVao();
   void StoreDataInAttributeList(int attribute_number, std::vector<float> &data);
   void UnbindVao();
